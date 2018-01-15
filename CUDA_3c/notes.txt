@@ -1,0 +1,161 @@
+w/GPU
+1024 x 1024
+
+real	0m59.708s
+user	0m54.992s
+sys	0m4.708s
+
+----------------------
+
+w/CPU
+1024 x 1024
+
+real	0m56.835s
+user	0m56.488s
+sys	0m0.344s
+
+----------------------
+
+w/GPU
+1024 x 1024
+
+No PNG writing
+
+real	0m39.255s
+user	0m34.868s
+sys	0m4.376s
+
+----------------------
+
+w/CPU
+1024 x 1024
+
+No PNG writing
+
+real	0m40.138s
+user	0m40.124s
+sys	0m0.012s
+
+----------------------
+
+w/CPU
+1024 x 1024
+
+No PNG writing
+
+Profiling
+
+======== Warning: No CUDA application was profiled, exiting
+
+----------------------
+
+w/GPU
+1024 x 1024
+
+No PNG writing
+
+Profiling
+
+======== Error: Unable to import nvprof generated profile data.
+
+----------------------
+
+$ nvidia-smi -l
+
+GPU version is running on the GPU
+
+Sun Dec  3 18:52:38 2017       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 384.90                 Driver Version: 384.90                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1070    Off  | 00000000:01:00.0  On |                  N/A |
+|  0%   47C    P2    56W / 230W |    965MiB /  8110MiB |    100%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0       966      G   /usr/lib/xorg/Xorg                           207MiB |
+|    0      1824      G   compiz                                       115MiB |
+|    0      8518      C   ./a.out                                       87MiB |
++-----------------------------------------------------------------------------+
+
+
+----------------------
+
+w/GPU actually working
+Using cudaMalloc & Memcpys
+1024 x 1024
+
+real	0m34.718s
+user	0m33.052s
+sys	0m1.660s
+
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0       966      G   /usr/lib/xorg/Xorg                           134MiB |
+|    0      1824      G   compiz                                       119MiB |
+|    0     13430      C   ./a.out                                      129MiB |
++-----------------------------------------------------------------------------+
+Sun Dec  3 20:11:11 2017       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 384.90                 Driver Version: 384.90                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1070    Off  | 00000000:01:00.0  On |                  N/A |
+|  0%   46C    P2    54W / 230W |    394MiB /  8110MiB |     95%      Default |
++-------------------------------+----------------------+----------------------+
+
+
+----------------------
+
+w/GPU		Thread count 256
+1024 x 1024
+
+No PNG image writing
+
+real	0m8.419s
+user	0m6.784s
+sys	0m1.628s
+
+----------------------
+
+w/GPU		Thread count 1024
+4096 x 4096	200 frames
+
+No PNG writing
+
+real	0m56.392s
+user	0m47.504s
+sys	0m8.888s
+
+----------------------
+
+w/GPU		Thread count 1024
+4096 x 4096	20 frames
+
+No PNG writing
+
+real	0m7.273s
+user	0m6.200s
+sys	0m1.052s
+
+----------------------
+
+w/CPU
+4096 x 4096	20 frames
+
+No PNG writing
+
+real	3m1.494s
+user	3m1.372s
+sys	0m0.044s
+
